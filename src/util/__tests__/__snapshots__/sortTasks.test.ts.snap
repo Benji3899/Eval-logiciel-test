@@ -1,0 +1,82 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Completed task should order at the botton from the most recent to the most old 1`] = `
+[
+  {
+    "created_at": 819154800000,
+    "done_at": undefined,
+    "id": "1",
+    "title": "Task 1",
+  },
+  {
+    "created_at": 1672527600000,
+    "done_at": undefined,
+    "id": "2",
+    "title": "Task 2",
+  },
+  {
+    "created_at": 1704063600000,
+    "done_at": undefined,
+    "id": "3",
+    "title": "Task 3",
+  },
+  {
+    "created_at": 1704063600000,
+    "done_at": 1704150000000,
+    "id": "4",
+    "title": "Task 4",
+  },
+  {
+    "created_at": 1672527600000,
+    "done_at": 1672614000000,
+    "id": "5",
+    "title": "Task 5",
+  },
+]
+`;
+
+exports[`Tasks should be sorted correctly when there is no done from the past to the future 1`] = `
+[
+  {
+    "created_at": 819154800000,
+    "done_at": undefined,
+    "id": "1",
+    "title": "Task 1",
+  },
+  {
+    "created_at": 1672527600000,
+    "done_at": undefined,
+    "id": "2",
+    "title": "Task 2",
+  },
+  {
+    "created_at": 1704063600000,
+    "done_at": undefined,
+    "id": "3",
+    "title": "Task 3",
+  },
+]
+`;
+
+exports[`sorts tasks correctly by done at 1`] = `
+[
+  {
+    "created_at": 1672527600000,
+    "done_at": undefined,
+    "id": "1",
+    "title": "Task 1",
+  },
+  {
+    "created_at": 1672614000000,
+    "done_at": undefined,
+    "id": "3",
+    "title": "Task 3",
+  },
+  {
+    "created_at": 1672614000000,
+    "done_at": 1672786800000,
+    "id": "2",
+    "title": "Task 2",
+  },
+]
+`;

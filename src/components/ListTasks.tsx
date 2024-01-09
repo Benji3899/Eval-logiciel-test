@@ -40,7 +40,10 @@ export function ListTask({
       <div className={styles.tasksWrapper}>
         <section className={styles.info}>
           <span className={styles.infoCreated}>
-            Tasks created <span className={styles.badge}>{tasksCreated}</span>
+            Tasks created{' '}
+            <span data-testid="tasksCreated" className={styles.badge}>
+              {tasksCreated}
+            </span>
           </span>
           <span className={styles.infoCompleted}>
             Completed{' '}
