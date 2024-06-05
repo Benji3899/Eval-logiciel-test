@@ -11,6 +11,7 @@ interface NoteItemProps {
 const NoteItem: React.FC<NoteItemProps> = ({ note }) => {
   const { removeNote } = useNotes();
   const [isEditing, setIsEditing] = useState(false);
+  const [isConfirming, setIsConfirming] = useState(false);
 
   const handleEdit = () => {
     setIsEditing(true);
@@ -20,21 +21,41 @@ const NoteItem: React.FC<NoteItemProps> = ({ note }) => {
     setIsEditing(false);
   };
 
+  const handleDelete = () => {
+    setIsConfirming(true);
+  };
+
+  const confirmDelete = () => {
+    removeNote(note.id);
+    setIsConfirming(false);
+  };
+
+  const cancelDelete = () => {
+    setIsConfirming(false);
+  };
+
   return (
-    <div style={{ backgroundColor: getBackgroundColor(note.grade) }}>
-      {isEditing ? (
-        <NoteEditForm note={note} onCancel={handleCancelEdit} />
-      ) : (
-        <>
-          <h3>{note.title}</h3>
-          <p>{note.grade}/20</p>
-          <p>{note.comment}</p>
-          <p>{new Date(note.date).toLocaleDateString()}</p>
-          <button onClick={handleEdit}>Edit</button>
-          <button onClick={() => removeNote(note.id)}>Delete</button>
-        </>
-      )}
-    </div>
+      <div style={{ backgroundColor: getBackgroundColor(note.grade) }}>
+        {isEditing ? (
+            <NoteEditForm note={note} onCancel={handleCancelEdit} />
+        ) : (
+            <>
+              <h3>{note.title}</h3>
+              <p>{note.grade}/20</p>
+              <p>{note.comment}</p>
+              <p>{new Date(note.date).toLocaleDateString()}</p>
+              <button onClick={handleEdit}>Edit</button>
+              <button onClick={handleDelete}>Delete</button>
+            </>
+        )}
+        {isConfirming && (
+            <div>
+              <p>Are you sure you want to delete this note?</p>
+              <button onClick={confirmDelete}>Yes</button>
+              <button onClick={cancelDelete}>No</button>
+            </div>
+        )}
+      </div>
   );
 };
 

@@ -8,6 +8,8 @@ interface NoteContextProps {
     addNote: (title: string, grade: number, comment: string) => void;
     updateNote: (id: string, title: string, grade: number, comment: string) => void;
     removeNote: (id: string) => void;
+    sortByDate: () => void;
+    sortByGrade: () => void;
 }
 
 const NoteContext = createContext<NoteContextProps | undefined>(undefined);
@@ -46,8 +48,20 @@ export const NoteProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
     };
 
+    const sortByDate = () => {
+        setNotes((prevNotes) =>
+            [...prevNotes].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+        );
+    };
+
+    const sortByGrade = () => {
+        setNotes((prevNotes) =>
+            [...prevNotes].sort((a, b) => a.grade - b.grade)
+        );
+    };
+
     return (
-        <NoteContext.Provider value={{ notes, addNote, updateNote, removeNote }}>
+        <NoteContext.Provider value={{ notes, addNote, updateNote, removeNote, sortByDate, sortByGrade }}>
             {children}
         </NoteContext.Provider>
     );
