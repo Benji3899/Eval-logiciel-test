@@ -1,16 +1,13 @@
-import styles from './Header.module.css';
+// src/components/Header.tsx
+// @ts-ignore
+import React from 'react';
 
-import todoLogo from '../assets/img/rocket.svg';
+const Header: React.FC = () => {
+    return (
+        <header>
+            <h1>Note Manager</h1>
+        </header>
+    );
+};
 
-export function Header() {
-  return (
-    <header className={styles.header}>
-      <img src={todoLogo} alt="To-do Logo" />
-
-      <div className={styles.title}>
-        <span className={styles.firstLetters}>to</span>
-        <span className={styles.lastLetters}>do</span>
-      </div>
-    </header>
-  );
-}
+export default Header;

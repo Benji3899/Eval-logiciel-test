@@ -1,65 +1,104 @@
-:root {
-  --white: #fff;
-  --gray-100: #f2f2f2;
-  --gray-200: #d9d9d9;
-  --gray-300: #808080;
-  --gray-400: #333333;
-  --gray-500: #262626;
-  --gray-600: #1a1a1a;
-  --gray-700: #0d0d0d;
+/*:root {*/
+/*  --white: #fff;*/
+/*  --gray-100: #f2f2f2;*/
+/*  --gray-200: #d9d9d9;*/
+/*  --gray-300: #808080;*/
+/*  --gray-400: #333333;*/
+/*  --gray-500: #262626;*/
+/*  --gray-600: #1a1a1a;*/
+/*  --gray-700: #0d0d0d;*/
 
-  --purple: #8284fa;
-  --purple-dark: #5e60ce;
-  --blue: #4ea8de;
-  --blue-dark: #1e6f9f;
+/*  --purple: #8284fa;*/
+/*  --purple-dark: #5e60ce;*/
+/*  --blue: #4ea8de;*/
+/*  --blue-dark: #1e6f9f;*/
 
-  /* 
-    Same as var(--blue-dark) but with 20
-    (20% opacity) https://www.digitalocean.com/community/tutorials/css-hex-code-colors-alpha-values
-  */
-  --blue-dark-bg-opacity: #1e6f9f20;
+/*  !* */
+/*    Same as var(--blue-dark) but with 20*/
+/*    (20% opacity) https://www.digitalocean.com/community/tutorials/css-hex-code-colors-alpha-values*/
+/*  *!*/
+/*  --blue-dark-bg-opacity: #1e6f9f20;*/
 
-  --danger: #e25858;
+/*  --danger: #e25858;*/
 
-  --font-size-small: 1.2rem;
-  --font-size-normal: 1.4rem;
-  --font-size-big: 1.6rem;
+/*  --font-size-small: 1.2rem;*/
+/*  --font-size-normal: 1.4rem;*/
+/*  --font-size-big: 1.6rem;*/
 
-  --border-radius-small: 4px;
-  --border-radius: 8px;
-  --border-radius-big: 16px;
+/*  --border-radius-small: 4px;*/
+/*  --border-radius: 8px;*/
+/*  --border-radius-big: 16px;*/
 
-  --breakpoint-mobile: 768px;
-}
+/*  --breakpoint-mobile: 768px;*/
+/*}*/
 
-* {
+/** {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*}*/
+
+/*:focus {*/
+/*  outline: transparent;*/
+/*  box-shadow: 0 0 0 0 4px var(--blue);*/
+/*}*/
+
+/*html {*/
+/*  font-size: 62.5%;*/
+/*  scroll-behavior: smooth;*/
+/*}*/
+
+/*body {*/
+/*  background: var(--gray-600);*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*}*/
+
+/*body,*/
+/*input,*/
+/*textarea,*/
+/*button {*/
+/*  font-family: 'Red Hat Text', sans-serif;*/
+/*  font-weight: 400;*/
+/*  line-height: 140%;*/
+/*  font-size: var(--font-size-normal);*/
+/*  color: var(--gray-100);*/
+/*}*/
+
+/* src/global.css */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:focus {
-  outline: transparent;
-  box-shadow: 0 0 0 0 4px var(--blue);
+header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  text-align: center;
 }
 
-html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
 }
 
-body {
-  background: var(--gray-600);
-  -webkit-font-smoothing: antialiased;
+input, textarea {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
 }
 
-body,
-input,
-textarea,
 button {
-  font-family: 'Red Hat Text', sans-serif;
-  font-weight: 400;
-  line-height: 140%;
-  font-size: var(--font-size-normal);
-  color: var(--gray-100);
+  padding: 10px;
+  font-size: 16px;
+  background-color: #61dafb;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #21a1f1;
 }
