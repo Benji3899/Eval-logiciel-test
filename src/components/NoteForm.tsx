@@ -1,9 +1,9 @@
 // src/components/NoteForm.tsx
 import React, { useState } from 'react';
-import { useNotes } from '../contexts/NoteContext';
+import { useNoteStore } from '../contexts/NoteContext';
 
 const NoteForm: React.FC = () => {
-    const { addNote } = useNotes();
+    const { addNote } = useNoteStore();
     const [title, setTitle] = useState('');
     const [grade, setGrade] = useState<number | ''>('');
     const [comment, setComment] = useState('');

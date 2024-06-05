@@ -1,7 +1,7 @@
 // src/components/NoteItem.tsx
 import React, { useState } from 'react';
 import { Note } from '../interfaces/Note';
-import { useNotes } from '../contexts/NoteContext';
+import { useNoteStore } from '../contexts/NoteContext';
 import NoteEditForm from './NoteEditForm';
 
 interface NoteItemProps {
@@ -9,7 +9,7 @@ interface NoteItemProps {
 }
 
 const NoteItem: React.FC<NoteItemProps> = ({ note }) => {
-  const { removeNote } = useNotes();
+  const { removeNote } = useNoteStore();
   const [isEditing, setIsEditing] = useState(false);
   const [isConfirming, setIsConfirming] = useState(false);
 

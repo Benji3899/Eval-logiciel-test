@@ -14,7 +14,7 @@ interface NoteContextProps {
 
 const NoteContext = createContext<NoteContextProps | undefined>(undefined);
 
-export const useNotes = () => {
+export const useNoteStore = () => {
     const context = useContext(NoteContext);
     if (!context) {
         throw new Error('useNotes must be used within a NoteProvider');

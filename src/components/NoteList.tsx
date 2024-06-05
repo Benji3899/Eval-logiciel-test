@@ -1,10 +1,10 @@
 // src/components/NoteList.tsx
 import React, { useState } from 'react';
-import { useNotes } from '../contexts/NoteContext';
+import { useNoteStore } from '../contexts/NoteContext';
 import NoteItem from './NoteItem';
 
 const NoteList: React.FC = () => {
-    const { notes, sortByDate, sortByGrade } = useNotes();
+    const { notes, sortByDate, sortByGrade } = useNoteStore();
     const [sortBy, setSortBy] = useState<'date' | 'grade'>('date'); // State to track sorting option
 
     const handleSortByDate = () => {

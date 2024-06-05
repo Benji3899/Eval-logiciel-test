@@ -1,6 +1,6 @@
 // src/components/NoteEditForm.tsx
 import React, { useState, useEffect } from 'react';
-import { useNotes } from '../contexts/NoteContext';
+import { useNoteStore } from '../contexts/NoteContext';
 import { Note } from '../interfaces/Note';
 
 interface NoteEditFormProps {
@@ -9,7 +9,7 @@ interface NoteEditFormProps {
 }
 
 const NoteEditForm: React.FC<NoteEditFormProps> = ({ note, onCancel }) => {
-  const { updateNote } = useNotes();
+  const { updateNote } = useNoteStore();
   const [title, setTitle] = useState(note.title);
   const [grade, setGrade] = useState(note.grade);
   const [comment, setComment] = useState(note.comment);
